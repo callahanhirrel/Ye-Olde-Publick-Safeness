@@ -6,14 +6,19 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class ToggleHorse : MonoBehaviour
 {
     public GameObject mask;
-    bool onHorse = false;
-    GameObject thirdPersonController;
+    public AudioClip neigh;
+    public AudioClip snort;
+
+    private bool onHorse = false;
+    private GameObject thirdPersonController;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         mask.SetActive(false);
         thirdPersonController = GameObject.Find("ThirdPersonController");
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +34,7 @@ public class ToggleHorse : MonoBehaviour
                 thirdPersonController.GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier = 2;
                 thirdPersonController.GetComponent<ThirdPersonCharacter>().m_AnimSpeedMultiplier = 2;
                 // play horse sound
+                source.PlayOneShot(neigh);
                 // set onHorse boolean to true
                 onHorse = true;
             }
@@ -40,6 +46,7 @@ public class ToggleHorse : MonoBehaviour
                 thirdPersonController.GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier = 1;
                 thirdPersonController.GetComponent<ThirdPersonCharacter>().m_AnimSpeedMultiplier = 1;
                 // play dismount sound?
+                source.PlayOneShot(snort);
                 // set onHorse to false
                 onHorse = false;
             }
