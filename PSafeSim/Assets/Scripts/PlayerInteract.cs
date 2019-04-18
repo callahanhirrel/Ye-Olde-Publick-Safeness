@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public GameObject playerController;
-    public float maxInteractableDistance;
+    public float maxInteractableDistance = 100f;
     public Camera cam;
 
     // Start is called before the first frame update
@@ -17,6 +16,22 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1")) {
+            Interact();
+        }
     }
+
+    void Interact()
+    {
+        RaycastHit hit;
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, maxInteractableDistance))
+        {
+            string objTag = hit.transform.gameObject.tag;
+            // Do stuff, make character react w/ text or animation 
+            // depending on the tag of the object clicked on?
+        }
+    }
+
 }
