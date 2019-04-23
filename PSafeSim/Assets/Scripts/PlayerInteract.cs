@@ -7,6 +7,8 @@ public class PlayerInteract : MonoBehaviour
     public float maxInteractableDistance = 100f;
     public Camera cam;
     public GameObject eventSpawner;
+    public GameObject explosion;
+    private float explosionLife = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,10 @@ public class PlayerInteract : MonoBehaviour
             if (obj.CompareTag("interactable"))
             {
                 Destroy(obj);
-                eventSpawner.GetComponent<SpawnEvents>().SpawnEvent();
+                Vector3 location = obj.transform.position;
+                Instantiate(explosion, location, Quaternion.identity);
+                Destroy(explosion, explosionLife);
+                eventSpawner.GetComponent<SpawnEvents>().timeToSpawn = true;
             }
         }
     }
