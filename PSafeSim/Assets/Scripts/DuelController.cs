@@ -11,10 +11,11 @@ public class DuelController : MonoBehaviour
     private float timeToEnemySpawn;
     public float timeLimit = 10.0f - (DataScript.Shenanigans * 0.5f);
     public GameObject squares;
+    public List<GameObject> squaresList;
 
     void Start()
     {
-        
+        squaresList = squares.
         var random = new System.Random();
         timeToEnemySpawn = random.Next(0, 10);
         audioSource = cam.GetComponent<AudioSource>();
