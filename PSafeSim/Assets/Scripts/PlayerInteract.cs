@@ -9,11 +9,12 @@ public class PlayerInteract : MonoBehaviour
     public GameObject eventSpawner;
     public GameObject explosion;
     private float explosionLife = 2f;
+    public int numProblemsSolved;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        numProblemsSolved = 0;
     }
 
     // Update is called once per frame
@@ -40,6 +41,8 @@ public class PlayerInteract : MonoBehaviour
             {
                 Destroy(obj);
                 Vector3 location = obj.transform.position;
+                numProblemsSolved++;
+                Debug.Log(numProblemsSolved);
                 Instantiate(explosion, location, Quaternion.identity);
                 Destroy(explosion, explosionLife);
                 eventSpawner.GetComponent<SpawnEvents>().timeToSpawn = true;
