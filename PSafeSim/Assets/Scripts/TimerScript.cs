@@ -23,7 +23,7 @@ public class TimerScript : MonoBehaviour
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-            timerText.text = "Seconds 'til quittin' time:" + Mathf.Round(timeLeft);
+            timerText.text = "Seconds 'til quittin' time: " + Mathf.Round(timeLeft);
         }
         else
         {
