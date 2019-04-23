@@ -1751,6 +1751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoulderCam: {fileID: 640537627}
+  player: {fileID: 2096428179}
 --- !u!1001 &610570255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5057,15 +5058,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 035accde26617884d8915b4fc64b3d70, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.56
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 035accde26617884d8915b4fc64b3d70, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.56
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 035accde26617884d8915b4fc64b3d70, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.56
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 035accde26617884d8915b4fc64b3d70, type: 3}
@@ -5697,6 +5698,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.200001, y: 6.79998, z: 7.463}
   m_Center: {x: 0, y: 3.39999, z: -2.3184998}
+--- !u!1 &2096428179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 149790, guid: 7737647c22c1fc64a88d5cd030c352ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 148386423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2108599921
 PrefabInstance:
   m_ObjectHideFlags: 0

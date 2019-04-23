@@ -6,6 +6,7 @@ public class ToggleCameras : MonoBehaviour
 {
     private Camera mainCam;
     public Camera shoulderCam;
+    public GameObject player;
     private bool isZoomed = false;
     private bool shoulderCamMove = false;
     private Quaternion shoulderCamDefaultRotation;
@@ -16,7 +17,7 @@ public class ToggleCameras : MonoBehaviour
         mainCam = GetComponent<Camera>();
         mainCam.enabled = true;
         shoulderCam.enabled = false;
-        shoulderCamDefaultRotation = shoulderCam.transform.rotation;
+        //shoulderCamDefaultRotation = shoulderCam.GetComponentInParent<Transform>().rotation;
     }
 
     // Update is called once per frame
@@ -24,9 +25,10 @@ public class ToggleCameras : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            shoulderCam.transform.rotation = player.transform.rotation;
             if (isZoomed == false)
             {
-                shoulderCam.transform.rotation = shoulderCamDefaultRotation;
+                //shoulderCam.transform.rotation = shoulderCamDefaultRotation;
                 mainCam.enabled = false;
                 shoulderCam.enabled = true;
                 isZoomed = true;
@@ -48,7 +50,7 @@ public class ToggleCameras : MonoBehaviour
             else
             {
                 shoulderCamMove = false;
-                shoulderCam.transform.rotation = shoulderCamDefaultRotation;
+                shoulderCam.transform.rotation = player.transform.rotation;
             }
         }
     }

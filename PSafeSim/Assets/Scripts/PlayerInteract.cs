@@ -28,10 +28,15 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, maxInteractableDistance))
         {
-            string objTag = hit.transform.gameObject.tag;
+            GameObject obj = hit.transform.gameObject;
+            string objTag = obj.tag;
             Debug.Log(objTag);
             // Do stuff, make character react w/ text or animation 
             // depending on the tag of the object clicked on?
+            if (obj.CompareTag("interactable"))
+            {
+                Destroy(obj);
+            }
         }
     }
 

@@ -9,7 +9,8 @@ public class SpawnEvents : MonoBehaviour
     public float spawnZoneRadius;
     public float y;
     public float objectRadius;
-    public GameObject testObject;
+    public GameObject wagon;
+    public GameObject enemyCowboy;
     public bool testFlag = true;
     public int numTests = 5;
     private float spawnMinX;
@@ -61,6 +62,9 @@ public class SpawnEvents : MonoBehaviour
         Debug.Log(location);
     }
 
+    // Helper method for making sure new objects to not spawn on top or
+    // inside of preexisting objects.
+    // Physics.OverlapSphere -> new Unity feature for Lab 5 credit?
     private bool IsValidLocation(Vector3 location)
     {
         Collider[] colliders = Physics.OverlapSphere(location, objectRadius);
