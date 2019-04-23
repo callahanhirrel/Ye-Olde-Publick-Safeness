@@ -9,7 +9,7 @@ public class PlayerInteract : MonoBehaviour
     public GameObject eventSpawner;
     public GameObject explosion;
     private float explosionLife = 2f;
-    public int numProblemsSolved;
+    public int numProblemsSolved; // this is same as shenanigans
 
     // Start is called before the first frame update
     void Start()
