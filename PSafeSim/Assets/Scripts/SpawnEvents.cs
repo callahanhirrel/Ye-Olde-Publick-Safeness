@@ -11,8 +11,7 @@ public class SpawnEvents : MonoBehaviour
     public float objectRadius;
     public GameObject wagon;
     public GameObject enemyCowboy;
-    public bool testFlag = true;
-    public int numTests = 5;
+    public bool initialSpawn = true;
     private float spawnMinX;
     private float spawnMaxX;
     private float spawnMinZ;
@@ -34,20 +33,28 @@ public class SpawnEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (testFlag == true)
+        if (initialSpawn == true)
         {
-            for (int i = 0; i < numTests; i++)
-            {
-                SpawnEvent();
-            }
-            testFlag = false;
+            SpawnEvent();
+            initialSpawn = false;
         }
     }
 
-    void SpawnEvent()
+    public void SpawnEvent()
     {
         bool validLocation = false;
+        GameObject prefab;
         Vector3 location = Vector3.zero;
+        float range = Random.value;
+
+        if (range > 0.5)
+        {
+            prefab = wagon;
+        }
+        else
+        {
+            prefab = enemyCowboy;
+        }
 
         while (validLocation == false) {
             float x = Random.Range(spawnMinX, spawnMaxX);
@@ -55,8 +62,11 @@ public class SpawnEvents : MonoBehaviour
             location = new Vector3(x, y, z);
             validLocation = IsValidLocation(location);
         }
-        newObject = Instantiate(testObject, location, Quaternion.identity);
-        newObject.GetComponent<Animation>().enabled = false;
+        newObject = Instantiate(prefab, location, Quaternion.identity);
+        if (newObject.GetComponent<Animation>())
+        {
+            newObject.GetComponent<Animation>().enabled = false;
+        }
         newObject.tag = "interactable";
         newObject.AddComponent<BoxCollider>();
         Debug.Log(location);

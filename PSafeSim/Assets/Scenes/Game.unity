@@ -596,6 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxInteractableDistance: 5
   cam: {fileID: 534669904}
+  eventSpawner: {fileID: 1699049236}
 --- !u!114 &148386428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4603,9 +4604,9 @@ MonoBehaviour:
   spawnZoneRadius: 70
   y: 0.01
   objectRadius: 5
-  testObject: {fileID: 100002, guid: 846edcecb228de449a39371d15993dc4, type: 3}
-  testFlag: 1
-  numTests: 10
+  wagon: {fileID: 100002, guid: 846edcecb228de449a39371d15993dc4, type: 3}
+  enemyCowboy: {fileID: 168126, guid: a5fb8724e1ce08944809ff1e99de1340, type: 3}
+  initialSpawn: 1
 --- !u!4 &1699049238
 Transform:
   m_ObjectHideFlags: 0

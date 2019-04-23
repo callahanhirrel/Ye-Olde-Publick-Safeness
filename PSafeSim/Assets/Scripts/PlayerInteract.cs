@@ -6,6 +6,7 @@ public class PlayerInteract : MonoBehaviour
 {
     public float maxInteractableDistance = 100f;
     public Camera cam;
+    public GameObject eventSpawner;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class PlayerInteract : MonoBehaviour
             if (obj.CompareTag("interactable"))
             {
                 Destroy(obj);
+                eventSpawner.GetComponent<SpawnEvents>().SpawnEvent();
             }
         }
     }
