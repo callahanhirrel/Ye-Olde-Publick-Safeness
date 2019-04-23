@@ -26,6 +26,7 @@ public class ToggleCameras : MonoBehaviour
         {
             if (isZoomed == false)
             {
+                shoulderCam.transform.rotation = shoulderCamDefaultRotation;
                 mainCam.enabled = false;
                 shoulderCam.enabled = true;
                 isZoomed = true;
@@ -36,7 +37,6 @@ public class ToggleCameras : MonoBehaviour
                 shoulderCam.enabled = false;
                 isZoomed = false;
                 shoulderCamMove = false;
-                shoulderCam.transform.rotation = shoulderCamDefaultRotation;
             } 
         }
         else if (Input.GetKeyDown(KeyCode.Q) && isZoomed == true)
