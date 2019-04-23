@@ -11,12 +11,13 @@ public class SpawnEvents : MonoBehaviour
     public float objectRadius;
     public GameObject wagon;
     public GameObject enemyCowboy;
-    public bool initialSpawn = true;
+    public bool timeToSpawn = true;
     private float spawnMinX;
     private float spawnMaxX;
     private float spawnMinZ;
     private float spawnMaxZ;
     private GameObject newObject;
+    private System.Random random;
 
     // Start is called before the first frame update
     void Start()
@@ -28,26 +29,28 @@ public class SpawnEvents : MonoBehaviour
         spawnMaxX = spawnZoneCenterX + spawnZoneRadius;
         spawnMinZ = spawnZoneCenterZ - spawnZoneRadius;
         spawnMaxZ = spawnZoneCenterZ + spawnZoneRadius;
+
+        random = new System.Random();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (initialSpawn == true)
+        if (timeToSpawn == true)
         {
             SpawnEvent();
-            initialSpawn = false;
+            timeToSpawn = false;
         }
     }
 
-    public void SpawnEvent()
+    void SpawnEvent()
     {
         bool validLocation = false;
         GameObject prefab;
         Vector3 location = Vector3.zero;
-        float range = Random.value;
+        float valueCheck = random.Next(0,10);
 
-        if (range > 0.5)
+        if (valueCheck > 5)
         {
             prefab = wagon;
         }

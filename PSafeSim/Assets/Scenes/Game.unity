@@ -597,6 +597,7 @@ MonoBehaviour:
   maxInteractableDistance: 5
   cam: {fileID: 534669904}
   eventSpawner: {fileID: 1699049236}
+  explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
 --- !u!114 &148386428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4606,7 +4607,7 @@ MonoBehaviour:
   objectRadius: 5
   wagon: {fileID: 100002, guid: 846edcecb228de449a39371d15993dc4, type: 3}
   enemyCowboy: {fileID: 168126, guid: a5fb8724e1ce08944809ff1e99de1340, type: 3}
-  initialSpawn: 1
+  timeToSpawn: 1
 --- !u!4 &1699049238
 Transform:
   m_ObjectHideFlags: 0
