@@ -33,6 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4524391241271724026}
+  - {fileID: 211081713230799980}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51,119 +52,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: '
-
-    Transform ''EthanLeftToe1'' has been deleted
-
-    Transform ''EthanLeftFoot'' has been deleted
-
-    Transform ''EthanLeftLeg'' has been deleted
-
-    Transform ''EthanLeftUpLeg'' has been deleted
-
-    Transform ''EthanRightToe1'' has been deleted
-
-    Transform ''EthanRightFoot'' has been deleted
-
-    Transform ''EthanRightLeg'' has been deleted
-
-    Transform ''EthanRightUpLeg'' has been deleted
-
-    Transform ''EthanJaw'' has been deleted
-
-    Transform ''EthanLeftEye'' has been deleted
-
-    Transform ''EthanRightEye'' has been deleted
-
-    Transform ''EthanHead'' has been deleted
-
-    Transform ''EthanLeftHandIndex3'' has been deleted
-
-    Transform ''EthanLeftHandIndex2'' has been deleted
-
-    Transform ''EthanLeftHandIndex1'' has been deleted
-
-    Transform ''EthanLeftHandMiddle3'' has been deleted
-
-    Transform ''EthanLeftHandMiddle2'' has been deleted
-
-    Transform ''EthanLeftHandMiddle1'' has been deleted
-
-    Transform ''EthanLeftHandPinky3'' has been deleted
-
-    Transform ''EthanLeftHandPinky2'' has been deleted
-
-    Transform ''EthanLeftHandPinky1'' has been deleted
-
-    Transform ''EthanLeftHandRing3'' has been deleted
-
-    Transform ''EthanLeftHandRing2'' has been deleted
-
-    Transform ''EthanLeftHandRing1'' has been deleted
-
-    Transform ''EthanLeftHandThumb3'' has been deleted
-
-    Transform ''EthanLeftHandThumb2'' has been deleted
-
-    Transform ''EthanLeftHandThumb1'' has been deleted
-
-    Transform ''EthanLeftHand'' has been deleted
-
-    Transform ''EthanLeftForeArm'' has been deleted
-
-    Transform ''EthanLeftArm'' has been deleted
-
-    Transform ''EthanLeftShoulder'' has been deleted
-
-    Transform ''EthanRightHandIndex3'' has been deleted
-
-    Transform ''EthanRightHandIndex2'' has been deleted
-
-    Transform ''EthanRightHandIndex1'' has been deleted
-
-    Transform ''EthanRightHandMiddle3'' has been deleted
-
-    Transform ''EthanRightHandMiddle2'' has been deleted
-
-    Transform ''EthanRightHandMiddle1'' has been deleted
-
-    Transform ''EthanRightHandPinky3'' has been deleted
-
-    Transform ''EthanRightHandPinky2'' has been deleted
-
-    Transform ''EthanRightHandPinky1'' has been deleted
-
-    Transform ''EthanRightHandRing3'' has been deleted
-
-    Transform ''EthanRightHandRing2'' has been deleted
-
-    Transform ''EthanRightHandRing1'' has been deleted
-
-    Transform ''EthanRightHandThumb3'' has been deleted
-
-    Transform ''EthanRightHandThumb2'' has been deleted
-
-    Transform ''EthanRightHandThumb1'' has been deleted
-
-    Transform ''EthanRightHand'' has been deleted
-
-    Transform ''EthanRightForeArm'' has been deleted
-
-    Transform ''EthanRightArm'' has been deleted
-
-    Transform ''EthanRightShoulder'' has been deleted
-
-    Transform ''EthanNeck'' has been deleted
-
-    Transform ''EthanSpine2'' has been deleted
-
-    Transform ''EthanSpine1'' has been deleted
-
-    Transform ''EthanSpine'' has been deleted
-
-    Transform ''EthanHips'' has been deleted
-
-    Transform ''EthanSkeleton'' has been deleted'
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -229,6 +118,74 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+--- !u!1 &4785726249042114319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211081713230799980}
+  - component: {fileID: 3984576471466464345}
+  m_Layer: 0
+  m_Name: ObjectivePointer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &211081713230799980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4785726249042114319}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.422, z: 1.968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408730}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &3984576471466464345
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4785726249042114319}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e3aed89cf282a41aaaf37ed1c760aa84, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1001 &4524391241271842658
 PrefabInstance:
   m_ObjectHideFlags: 0

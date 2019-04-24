@@ -15,7 +15,7 @@ public class DuelController : MonoBehaviour
 
     void Start()
     {
-        squaresList = squares.
+        // squaresList = squares. <- this was giving me an error so I commented it out - Callahan
         var random = new System.Random();
         timeToEnemySpawn = random.Next(0, 10);
         audioSource = cam.GetComponent<AudioSource>();
