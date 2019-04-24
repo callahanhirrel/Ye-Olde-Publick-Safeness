@@ -5035,7 +5035,7 @@ MonoBehaviour:
   spawnZoneRadius: 70
   y: 0.01
   objectRadius: 5
-  wagon: {fileID: 100002, guid: 846edcecb228de449a39371d15993dc4, type: 3}
+  wagon: {fileID: 8193096119391338713, guid: 9c191165cff141e478365f65de308572, type: 3}
   enemyCowboy: {fileID: 168126, guid: a5fb8724e1ce08944809ff1e99de1340, type: 3}
   timeToSpawn: 1
 --- !u!4 &1699049238
