@@ -10,11 +10,14 @@ public class PlayerInteract : MonoBehaviour
     public GameObject explosion;
     private float explosionLife = 2f;
     public int numProblemsSolved; // this is same as shenanigans
+    private AudioSource source;
+    public AudioClip kaboom;
 
     // Start is called before the first frame update
     void Start()
     {
         numProblemsSolved = 0;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class PlayerInteract : MonoBehaviour
                 numProblemsSolved++;
                 Debug.Log(numProblemsSolved);
                 Instantiate(explosion, location, Quaternion.identity);
+                source.PlayOneShot(kaboom);
                 Destroy(explosion, explosionLife);
                 eventSpawner.GetComponent<SpawnEvents>().timeToSpawn = true;
             }
