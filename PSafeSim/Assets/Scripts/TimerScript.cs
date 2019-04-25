@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class TimerScript : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class TimerScript : MonoBehaviour
     public Text gameOverText;
     public Text statsText;
     public GameObject player;
+    public GameObject playerController;
     public AudioClip beep;
     private AudioSource source;
-    private float timeLeft = 120.0f;
+    private float timeLeft = 20.0f;
     private int numShenanigans;
     private float prevTime;
 
@@ -44,12 +46,21 @@ public class TimerScript : MonoBehaviour
             statsText.enabled = true;
             if (numShenanigans > 0)
             {
-                statsText.text = "Congratulations, Deputy.\nYou put an end to " + numShenanigans.ToString() + " shenanigans \nwhile operating sans-Sheriff.";
+                if (numShenanigans == 1)
+                {
+                    statsText.text = "Congratulations, Deputy.\nYou put an end to 1 shenanigan \nwhile operating sans-Sheriff.";
+                } else
+                {
+                    statsText.text = "Congratulations, Deputy.\nYou put an end to " + numShenanigans.ToString() + " shenanigans \nwhile operating sans-Sheriff.";
+                }
             }
             else
             {
                 statsText.text = "You stopped no shenanigans.\nWe know you can do better, Deputy.";
             }
+            // freeze the player
+            playerController.GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier = 0;
+            playerController.GetComponent<ThirdPersonCharacter>().m_AnimSpeedMultiplier = 0;
 
         }
     }

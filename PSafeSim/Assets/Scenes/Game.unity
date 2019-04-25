@@ -640,6 +640,14 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: ad52d12ad7e12c644a18f176d31a93bb, type: 3}
+    - target: {fileID: 11469404, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 3}
+      propertyPath: m_MovingTurnSpeed
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469404, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 3}
+      propertyPath: m_StationaryTurnSpeed
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3984576471466464345, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 3}
@@ -3891,6 +3899,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1786304301}
   statsText: {fileID: 881975243}
   player: {fileID: 148386426}
+  playerController: {fileID: 2096428179}
   beep: {fileID: 8300000, guid: 04bfce2877ed9034f8a82dc2ad3a7b82, type: 3}
 --- !u!82 &1349255169
 AudioSource:
