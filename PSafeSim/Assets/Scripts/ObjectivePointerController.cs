@@ -11,6 +11,10 @@ public class ObjectivePointerController : MonoBehaviour
     void Update()
     {
         objective = GameObject.FindGameObjectWithTag("interactable");
-        pointer.transform.LookAt(objective.transform);
+
+        if (objective) {
+            pointer.transform.LookAt(objective.transform);
+        }
+        
     }
 }
