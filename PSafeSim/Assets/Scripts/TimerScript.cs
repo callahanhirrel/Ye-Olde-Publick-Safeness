@@ -13,7 +13,7 @@ public class TimerScript : MonoBehaviour
     public GameObject playerController;
     public AudioClip beep;
     private AudioSource source;
-    private float timeLeft = 20.0f;
+    private float timeLeft = 120.0f;
     private int numShenanigans;
     private float prevTime;
 
