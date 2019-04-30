@@ -12,6 +12,7 @@ public class TimerScript : MonoBehaviour
     public GameObject player;
     public GameObject playerController;
     public AudioClip beep;
+    public bool isPaused;
     private AudioSource source;
     private float timeLeft = 120.0f;
     private int numShenanigans;
@@ -29,13 +30,16 @@ public class TimerScript : MonoBehaviour
     {
         if (timeLeft > 0)
         {
-            timeLeft -= Time.deltaTime;
-            timerText.text = "Seconds 'til quittin' time: " + Mathf.Round(timeLeft);
-            if (Mathf.Round(timeLeft) < Mathf.Round(prevTime) && timeLeft <= 11)
+            if (!isPaused)
             {
-                source.PlayOneShot(beep);
+                timeLeft -= Time.deltaTime;
+                timerText.text = "Seconds 'til quittin' time: " + Mathf.Round(timeLeft);
+                if (Mathf.Round(timeLeft) < Mathf.Round(prevTime) && timeLeft <= 11)
+                {
+                    source.PlayOneShot(beep);
+                }
+                prevTime = timeLeft;
             }
-            prevTime = timeLeft;
         }
         else
         {
