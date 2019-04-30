@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DuelController : MonoBehaviour
@@ -10,14 +11,14 @@ public class DuelController : MonoBehaviour
     private AudioSource audioSource;
     private float timeToEnemySpawn;
     public float timeLimit = 10.0f - (DataScript.Shenanigans * 0.5f);
-    public GameObject squares;
-    public List<GameObject> squaresList;
+    public GameObject target;
+    private bool targetSpawned;
+    public GameObject explosion;
 
     void Start()
     {
-        // squaresList = squares. <- this was giving me an error so I commented it out - Callahan
         var random = new System.Random();
-        timeToEnemySpawn = random.Next(0, 10);
+        timeToEnemySpawn = random.Next(0, 5);
         audioSource = cam.GetComponent<AudioSource>();
         audioSource.Play();
     }
@@ -26,13 +27,33 @@ public class DuelController : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
-            if (timeToEnemySpawn > 0) // Enemy has not spawned yet
+            if (!targetSpawned)
             {
-                timeToEnemySpawn -= Time.deltaTime;
+                if (timeToEnemySpawn > 0) // Enemy has not spawned yet
+                {
+                    timeToEnemySpawn -= Time.deltaTime;
+                }
+                else // Enemy spawn timer reaches 0
+                {
+                    targetSpawned = true;
+                    var xPos = Random.Range(-10f, 10f);
+                    var yPos = Random.Range(-4f, 4f);
+                    var spawnPosition = new Vector2(xPos, yPos);
+                    Instantiate(target, spawnPosition, Quaternion.identity);
+                }
             }
-            else // Enemy spawn timer reaches 0
+            else // target has spawned
             {
-                
+                if (timeLimit > 0) // time is left in this event
+                {
+                    timeLimit -= Time.deltaTime;
+                }
+                else
+                {
+                    Destroy(target);
+
+                    SceneManager.LoadScene("Game");
+                }
             }
         }
     }

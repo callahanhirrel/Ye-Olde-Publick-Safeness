@@ -8,6 +8,8 @@ TagManager:
   - building
   - env_object
   - interactable
+  - Target
+  - enemyCowboy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - PostProcessing
   - ground
-  - 
+  - Target
   - 
   - 
   - 
@@ -44,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Target
+    uniqueID: 2039719317
     locked: 0
