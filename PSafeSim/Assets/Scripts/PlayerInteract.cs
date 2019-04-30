@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -12,12 +14,16 @@ public class PlayerInteract : MonoBehaviour
     public int numProblemsSolved; // this is same as shenanigans
     private AudioSource source;
     public AudioClip kaboom;
+    public GameObject player;
+    public Text timer;
+    private TimerScript timerScript;
 
     // Start is called before the first frame update
     void Start()
     {
         numProblemsSolved = 0;
         source = GetComponent<AudioSource>();
+        timerScript = timer.GetComponent<TimerScript>();
     }
 
     // Update is called once per frame
@@ -50,6 +56,14 @@ public class PlayerInteract : MonoBehaviour
                 source.PlayOneShot(kaboom);
                 Destroy(explosion, explosionLife);
                 eventSpawner.GetComponent<SpawnEvents>().timeToSpawn = true;
+                DataScript.Shenanigans++;
+            }
+            else if (obj.CompareTag("enemyCowboy"))
+            {
+                DataScript.Location = player.transform.position;
+                DataScript.TimeLeft = timerScript.timeLeft;
+
+                SceneManager.LoadScene("Duel");
             }
         }
     }

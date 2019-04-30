@@ -49,14 +49,17 @@ public class SpawnEvents : MonoBehaviour
         GameObject prefab;
         Vector3 location = Vector3.zero;
         float valueCheck = random.Next(0,10);
+        string eventTag;
 
         if (valueCheck > 5)
         {
             prefab = wagon;
+            eventTag = "interactable";
         }
         else
         {
             prefab = enemyCowboy;
+            eventTag = "enemyCowboy";
         }
 
         while (validLocation == false) {
@@ -70,7 +73,7 @@ public class SpawnEvents : MonoBehaviour
         {
             newObject.GetComponent<Animation>().enabled = false;
         }
-        newObject.tag = "interactable";
+        newObject.tag = eventTag;
         newObject.AddComponent<BoxCollider>();
         Debug.Log(location);
     }

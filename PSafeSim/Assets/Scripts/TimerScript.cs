@@ -14,7 +14,7 @@ public class TimerScript : MonoBehaviour
     public AudioClip beep;
     public bool isPaused;
     private AudioSource source;
-    private float timeLeft = 120.0f;
+    public float timeLeft = 120.0f;
     private int numShenanigans;
     private float prevTime;
 
@@ -45,7 +45,7 @@ public class TimerScript : MonoBehaviour
         {
             timerText.text = "Seconds 'til quittin' time: 0";
             // game over
-            numShenanigans = player.GetComponent<PlayerInteract>().numProblemsSolved;
+            numShenanigans = DataScript.Shenanigans;
             gameOverText.enabled = true;
             statsText.enabled = true;
             if (numShenanigans > 0)
