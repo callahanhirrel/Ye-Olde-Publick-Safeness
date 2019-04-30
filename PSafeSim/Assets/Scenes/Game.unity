@@ -947,6 +947,8 @@ MonoBehaviour:
   explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
   numProblemsSolved: 0
   kaboom: {fileID: 8300000, guid: 7745a1737de3f5e47a300894a7d42948, type: 3}
+  player: {fileID: 2096428179}
+  timer: {fileID: 1349255166}
 --- !u!114 &148386428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,7 +989,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -3237,6 +3239,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 963687075}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1042853023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042853025}
+  - component: {fileID: 1042853024}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1042853024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042853023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df6f7208a9a619438dff333a8033696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2096428179}
+  timer: {fileID: 1349255166}
+  canvas: {fileID: 0}
+--- !u!4 &1042853025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042853023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 304.2, y: 1, z: 243.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1048395175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4407,6 +4455,7 @@ MonoBehaviour:
   playerController: {fileID: 2096428179}
   beep: {fileID: 8300000, guid: 04bfce2877ed9034f8a82dc2ad3a7b82, type: 3}
   isPaused: 0
+  timeLeft: 120
 --- !u!82 &1349255169
 AudioSource:
   m_ObjectHideFlags: 0

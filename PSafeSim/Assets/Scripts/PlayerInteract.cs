@@ -62,6 +62,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 DataScript.Location = player.transform.position;
                 DataScript.TimeLeft = timerScript.timeLeft;
+                DataScript.IsPaused = false;
 
                 SceneManager.LoadScene("Duel");
             }

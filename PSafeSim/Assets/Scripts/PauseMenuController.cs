@@ -19,7 +19,9 @@ public class PauseMenuController : MonoBehaviour
     void Start()
     {
         timerScript = timerText.GetComponent<TimerScript>();
-        Pause();
+        moveSpeedMultiplier = playerController.GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier;
+        animSpeedMultiplier = playerController.GetComponent<ThirdPersonCharacter>().m_AnimSpeedMultiplier;
+        UnPause();
     }
 
     // Update is called once per frame
@@ -48,6 +50,7 @@ public class PauseMenuController : MonoBehaviour
         animSpeedMultiplier = playerController.GetComponent<ThirdPersonCharacter>().m_AnimSpeedMultiplier;
         playerController.GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier = 0;
         playerController.GetComponent<ThirdPersonCharacter>().m_AnimSpeedMultiplier = 0;
+        DataScript.IsPaused = true;
     }
 
     private void UnPause()
@@ -58,5 +61,6 @@ public class PauseMenuController : MonoBehaviour
         isPaused = false;
         playerController.GetComponent<ThirdPersonCharacter>().m_MoveSpeedMultiplier = moveSpeedMultiplier;
         playerController.GetComponent<ThirdPersonCharacter>().m_AnimSpeedMultiplier = animSpeedMultiplier;
+        DataScript.IsPaused = false;
     }
 }
